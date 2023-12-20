@@ -123,3 +123,21 @@ On remarque que les 1 sont tous placés sur la première ligne et qu'ils sont pr
 ![Fonction de recherche de la clé](./img/partie2/trouver_cle_image.PNG)
 
 ![Résultat de la fonction de recherche de la clé](./img/partie2/cle_image.PNG)
+
+# Partie 3
+
+Dans le fichier README que nous pouvons retrouver sur Celene, il nous est dit que nous avons récupéré une partie de la clé de session qui est de taille 64 bits. Nous savons alors que cette clé correspond à celle trouvée dans l'image **rossignol2.bmp**. Ensuite, nous savons que le protocole AES est cette fois-ci utilisé en mode CBC. Nous avons donc fait une fonction de dechiffrement AES en mode CBC car nous avons besoin d'obtenir le vecteur "iv". Voici à quoi elle ressemble :
+
+![Fonction dechiffrement AES CBC](./img/partie3/dechiffrement_aes_cbc.PNG)
+
+Nous avons ensuite fait une fonction qui permet de filtrer les messages chiffrés à partir de paquets capturés dans un fichier .cap, pour ensuite les déchiffrer. Voici à quoi elle ressemble : 
+
+![Fonction de filtrage de messages](./img/partie3/filtrer_messages.PNG)
+
+Nous avons ensuite effectuer ces étapes : 
+
+![Procédure pour trouver les messages décryptés](./img/partie3/procedure_messages.PNG)
+
+Puis nous obtenons alors ces messages : 
+
+![Résultats des messages décryptés](./img/partie3/messages_obtenus.PNG)
