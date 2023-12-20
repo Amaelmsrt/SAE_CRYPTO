@@ -18,6 +18,14 @@ Le chiffremement RSA comprend plusieurs étapes : la génération de clé, le ch
 
 En supposant que toutes ces étapes soient correctement utilisées, Eve aura besoin d'un temps considérable pour en venir à bout car un problème intervient, qui est la factorisation de nombres premiers. En l'occurrence, Eve devra factoriser n pour pouvoir trouver p et q, ce qui est un problème difficile à résoudre. Elle aura donc énormément de mal à trouver d en testant toutes les valeurs possibles pour ce dernier.
 
+## Question 2 :
+
+L'algorithme SDES est peu sécurisé tout d'abord à cause de la taille de clés utillisée qui est de 10 bits, sachant qu'il n'y a que 8 bits effectifs. En effet, cette taille est plutôt faible car cela signifie qu'il n'y a que 2^10 possibilités, ce qui correspond à 1024. 
+
+## Question 3 :
+
+L'algorithme Double SDES n'est pas non plus si sûr que cela. L'attaque par force brute intervient à nouveau car il y a certes plus de possibilités car la taille de clé passe de 10 bits à 20 bits, ce qui fait 2^10 + 2^10 = 2048 possibilités, mais cela n'est toujours pas suffisant car ça ne coûtera pas énormément pour un ordinateur actuel. Cela double aussi les tours de chiffrement, mais 4 font toujours peu. 
+
 ## Retrouver des clés 
 
 Pour retrouver des clés, il a fallu différentes étapes. Tout d'abord, il faut prendre en compte l'information donnée dans le sujet, qui est que le code de SDES ne permet d'encoder qu'un seul bloc de 8 bits, correspondant à 1 octet. Nous avons donc fait une fonction qui permet de convertir une chaîne de caractères en liste de nombres décimaux par rapport à la valeur d'une lettre en ASCII. Voici à quoi ressemble la fonction : 
