@@ -65,3 +65,9 @@ Si on prend le texte du fichier fourni de l'extrait d'Arsène Lupin, le cassage 
 ![Résultats tests cassage astucieux](./img/partie1/resultats_tests_cassage_astucieux.PNG)
 
 Le nombre de tentatives a beau être très élevé, on peut constater que c'est extrêment rapide. Le cassage astucieux fait donc bien son travail.
+
+# Partie 2
+
+## Question 1
+
+L'utilisation de l'algorithme AES avec des clés de taille 256 bits à des bons côtés comme des mauvais. Tout d'abord, c'est un bon choix car avec une clé d'une si grande taille, le cassage par force brute serait beaucoup trop long et donc la sécurité est plus assurée comparé à l'agorithme SDES. En revanche, les opérations de chiffrement et de déchiffrement peuvent devenir beaucoup plus longues étant donné que la taille de la clé est bien plus grande, et donc nécessitent plus de ressources pour les calculs qui eux vont prendre plus de temps. Par la même occasion, cela impacte aussi les anciens appareils qui eux n'ont pas la puissance nécessaire pour les opérations à effectuer.
