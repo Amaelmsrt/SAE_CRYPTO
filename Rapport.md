@@ -141,3 +141,27 @@ Nous avons ensuite effectuer ces étapes :
 Puis nous obtenons alors ces messages : 
 
 ![Résultats des messages décryptés](./img/partie3/messages_obtenus.PNG)
+
+# Partie 4
+
+## Alice et Bob utilisent toujours la même clé. Est-ce une bonne pratique ?
+
+Ce n'est pas une bonne pratique pour Alice et Bob de toujours utiliser la même clé car si quelqu'un arrive à trouver la clé, il pourra alors déchiffrer tous les messages qu'ils s'envoient, et donc ils ne seront plus protégés. Il doivent changer régulièrement de clé pour éviter des problèmes de sécurité.
+
+## Le protocole PlutotBonneConfidentialité est inspiré d'un vrai protocole réseau. Lequel? Décrivez la partie associée à la certification des clés qui est absente de PlutotBonneConfidentialité.
+
+Ce protocole est inspiré du vrai protocole réseau Pretty Good Privacy. La partie associée à la certification des clés qui est absente de PlutotBonneConfidentialité est la phase de vérification de l'authenticité des clés.
+
+## Il n'y a pas que pour l'échange de mots doux qu'un tel protocole peut se révéler utile... Donnez au moins deux autres exemples de contexte où cela peut se révéler utile.
+
+Cela peut se révéler utile lorsque l'on veut effectuer des transactions financières, ou encore pour des échanges de données confidentielles, par exemple dans un cadre diplomatique.
+
+## Connaissez-vous des applications de messagerie utilisant des mécanismes de chiffrement similaires (chiffrement de bout en bout)? Citez-en au moins deux et décrivez brièvement les mécanismes cryptographiques sous-jacent.
+
+L'application Telegram utilise le chiffrement de bout en bout avec un protocole de chiffrement propriétaire nommé MTProto. Pour faire simple, chaque message est chiffré sur l'appareil de l'expéditeur, et seulement le destinataire peut le déchiffrer quand il le reçoit.
+
+L'application Whatsapp utilise aussi le chiffrement de bout en bout basé sur l'algorithme AES, et a le même fonctionnement concernant les étapes de chiffrement et de déchiffrement.
+
+## Récemment, différents projets de loi et règlements (CSAR, EARN IT Act) visent à inciter voire obliger les fournisseurs de services numériques à pouvoir déchiffrer (et donc analyser) les communications de leurs utilisateurs. Discutez des arguments en faveur ou contre ces législations, notamment en matière de vie privée.
+
+Les bons points de ces législations concernent la luttle contre les comportements criminels en ligne, la prévention du terrorisme, donc de la protection des citoyens. Cependant, cela entraîne une violation des droits de l'Homme à cause de la surveillance de masse qui engendre un manque de vie privée de ces derniers.
