@@ -71,3 +71,55 @@ Le nombre de tentatives a beau être très élevé, on peut constater que c'est 
 ## Question 1
 
 L'utilisation de l'algorithme AES avec des clés de taille 256 bits à des bons côtés comme des mauvais. Tout d'abord, c'est un bon choix car avec une clé d'une si grande taille, le cassage par force brute serait beaucoup trop long et donc la sécurité est plus assurée comparé à l'agorithme SDES. En revanche, les opérations de chiffrement et de déchiffrement peuvent devenir beaucoup plus longues étant donné que la taille de la clé est bien plus grande, et donc nécessitent plus de ressources pour les calculs qui eux vont prendre plus de temps. Par la même occasion, cela impacte aussi les anciens appareils qui eux n'ont pas la puissance nécessaire pour les opérations à effectuer.
+
+
+## Question 2
+
+### 2.1
+
+Pour observer les différents temps d'exécution entre les protocoles SDES et AES, nous avons fait des fonctions de chiffrement et de déchifrement AES en utilisant un lien qui nous a été donné dans le sujet. Voici à quoi elles ressemblent :
+
+![Fonction chiffrement AES](./img/partie2/chiffrement_aes.PNG)
+![Fonction déchiffrement AES](./img/partie2/dechiffrement_aes.PNG)
+
+Nous avons ensuite fait des tests pour le temps d'exécution de ces fonctions. Voici à quoi ressemblent les tests :
+
+![Tests des fonctions](./img/partie2/tests_fonctions.PNG)
+
+Nous obtenons donc les résultats suivants :
+
+![Résultats des tests](./img/partie2/resultats_tests.PNG)
+
+Nous pouvons constater que le temps de chiffrement et de déchiffrement du protocole AES est plus rapide que celui du protocole SDES.
+
+### 2.2
+
+Si on prend en compte le nombre de clés possibles avec le protocole AES si on voulait faire un cassage brutal et un cassage astucieux, comme Eve utilise des clés de 256 bits, il y a 2^256 possibilités de clés. En imaginant que le nombre de clés testées par seconde est de 10^9, on peut alors calculer le temps nécessaire pour tester toutes les clés. Nous avons utilisé la fonction timedelta du module datetime qui permet de calculer la différence entre deux dates. On divise donc le nombre de clés par le nombre de clés testées par seconde. Voici à quoi ressemble la procédure : 
+
+![Procédure calcul temps](./img/partie2/procedure_calcul_temps.PNG)
+
+Voyons les résultats : 
+
+![résultats calcul temps](./img/partie2/resultats_calcul_temps.PNG)
+
+On peut constater que le temps nécessaire pour tout tester est énorme étant donné le nombre de possibilités. On peut au moins en conclure que le protocole AES est bien plus sécurisé que le SDES.
+
+## Question 3
+
+Il existe comme autres types d'attaques pour tester les différentes possibilités de clés comme l'attaque par analyse fréquentielle. Elle consiste à analyser la fréquence d'apparition des lettres dans un texte chiffré. En se penchant sur ces fréquences, on peut ainsi deviner des parties du message chiffré, et donc de la clé. De plus, il y a l'attaque par clé apparentée. Elle consiste à tester des clés pour en déduire d'autres par rapport à la relation entre des différentes.
+
+## Images
+
+On sait que la clé se trouve dans l'image numéro 2 qui est **rossignol2.bmp**. De ce fait, on va chercher où sont placés les 1 dans les pixels convertis en binaire avec leur position (x,y) dans l'image 1. Par la même occasion, on va afficher le nombre de 1 présents pour voir s'il y a une cohérence, comme on sait que la clé fait 64 bits. Voici à quoi ressemblent la fonction et le résultat donné : 
+
+![Fonction de recherche de placements des 1](./img/partie2/trouver_bits_1.PNG)
+
+Voici le résultat donné :
+
+![Résultat de la fonction de recherche de placements des 1](./img/partie2/resultats_bits_1.PNG)
+
+On remarque que les 1 sont tous placés sur la première ligne et qu'ils sont présents dès le premier pixel. De plus, on remarque qu'il y a 33 bits qui valent 1 en base 2, ce qui signifie que c'est cohérent concernant la taille de la clé. On fait donc une fonction qui parcourt la première ligne de l'image 2 avec des valeurs de 0 à 64, et on ajoute la valeur en binaire de chaque pixel à une chaîne de caractère. Voici à quoi ressemblent la fonction et le résultat donné :
+
+![Fonction de recherche de la clé](./img/partie2/trouver_cle_image.PNG)
+
+![Résultat de la fonction de recherche de la clé](./img/partie2/cle_image.PNG)
